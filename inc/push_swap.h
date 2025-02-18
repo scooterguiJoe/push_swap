@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/28 16:09:22 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:43:39 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,23 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdint.h>
-# include "Libft/libft.h"
+# include "../Libft/libft.h"
 
-typedef struct s_list
+typedef struct s_node
 {
-	int			*content;
-	void		*previous;
-	void		*next;
-}	t_list;
+	int				*content;
+	struct s_node	*previous;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_stack
 {
-	
+	int			*lenght;
 	void		*head;
 	void		*tail;
 }	t_stack;
+
+int stack_len(t_list *a);
+long int ft_atol(char *str);
 
 # endif
