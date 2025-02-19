@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 16:16:14 by guvascon          #+#    #+#             */
-/*   Updated: 2024/12/03 13:21:46 by guvascon         ###   ########.fr       */
+/*   Created: 2025/02/19 15:24:18 by guvascon          #+#    #+#             */
+/*   Updated: 2025/02/19 15:36:28 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/push_swap.h"
 
-int	ft_putstr(char *str)
+int error_syntax(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (!str)
-		return (write (1, "(null)", 6));
-	while (str[i] != '\0')
+	if (!(str[i] == '-' || str[i] == '+' || (str[i] >= 48 && str[i] <= 57)))
+		return(1);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while(str[i])
 	{
-		write (1, &str[i], 1);
+		if (!(str[i] >= 48 && str[i] <= 57))
+			return (1);
 		i++;
 	}
-	return (i);
+	return (0);
+}
+
+int duplicate(t_list *a, int n)
+{
+	if (!a)
+		return (0);
+	while(a)
+	{
+		if (a->content == n)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }

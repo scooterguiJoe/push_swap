@@ -6,7 +6,7 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 14:58:52 by guvascon          #+#    #+#              #
-#    Updated: 2025/02/18 15:42:06 by guvascon         ###   ########.fr        #
+#    Updated: 2025/02/19 15:02:24 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,27 +14,33 @@ SRCS = srcs/push_swap.c srcs/aux.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc
+CC = @cc
 CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
 LIBFT_PATH = ./Libft
-LIBFT = $(LIBFT_PATH)/Libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
-NAME = push_swap.a
+NAME = push_swap
 
 all : $(NAME) 
 $(NAME) : $(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
+	@echo " [ .. ] | Compiling.."
 	@make -s -C $(LIBFT_PATH)
-
+	@echo " [ OK ] | Ready!"
 
 clean:
-	rm -f $(OBJS) 
-
+	@$(RM) $(OBJS) 
+	@echo "all objects were removed"
+	
 fclean: clean
-	rm -f $(NAME)
+	@$(RM) $(NAME) 
+	@make -s fclean -C $(LIBFT_PATH)
+	clear
+	@echo "all files were removed"
 
 re: fclean $(NAME)
 

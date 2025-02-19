@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:12:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/27 17:09:58 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:56:02 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdint.h>
-# include "./printf/ft_printf.h"
 
 typedef struct s_list
 {

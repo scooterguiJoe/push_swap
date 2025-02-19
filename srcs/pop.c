@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   pop.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 16:13:41 by guvascon          #+#    #+#             */
-/*   Updated: 2024/12/03 13:28:09 by guvascon         ###   ########.fr       */
+/*   Created: 2025/02/19 16:58:43 by guvascon          #+#    #+#             */
+/*   Updated: 2025/02/19 17:02:23 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/push_swap.h"
 
-int	ft_strlen(const char *str)
+t_list popfirst(t_list **stack)
 {
-	int	i;
+    t_list *tmp;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    if(!(*stack))
+        return (NULL);
+    tmp = *stack;
+    *stack = (*stack)->next;
+    tmp->next = NULL;
+    return(tmp);
 }
