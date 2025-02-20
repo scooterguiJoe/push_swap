@@ -6,7 +6,7 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 14:58:52 by guvascon          #+#    #+#              #
-#    Updated: 2025/02/19 15:02:24 by guvascon         ###   ########.fr        #
+#    Updated: 2025/02/20 11:59:36 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,5 +43,6 @@ fclean: clean
 	@echo "all files were removed"
 
 re: fclean $(NAME)
-
+	clear
+	@echo "bla bla bla"
 .PHONY: all clean fclean re bonus

@@ -6,7 +6,7 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 12:28:49 by guvascon          #+#    #+#              #
-#    Updated: 2025/02/19 12:47:42 by guvascon         ###   ########.fr        #
+#    Updated: 2025/02/20 12:25:41 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,8 @@ RM = rm -f
 NAME = libft.a
 
 all : $(NAME) 
-$(NAME) : $(OBJS) 
+$(NAME) : $(OBJS) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJS)
-
-bonus: $(BONUS_OBJ)
-			ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJ) 
@@ -45,4 +42,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
