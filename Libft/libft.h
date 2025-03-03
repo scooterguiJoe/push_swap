@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:12:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/02/19 11:56:02 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:27:24 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -69,5 +70,18 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+# define LWCASE "0123456789abcdef"
+# define UPCASE "0123456789ABCDEF"
+# define DEC "0123456789"
+
+int		ft_printf(const char *format, ...);
+int		ft_putchar(char c);
+void	ft_putnbr(int n);
+int		ft_putstr(char *str);
+int		ft_putnbr_base(long nbr, char *base);
+int		ft_print_format(char special, va_list *args);
+int		ft_strlenprintf(const char *str);
+int		ft_print_pointer(unsigned long int n, char *base, int flag);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 14:58:52 by guvascon          #+#    #+#              #
-#    Updated: 2025/02/20 11:59:36 by guvascon         ###   ########.fr        #
+#    Updated: 2025/03/03 17:04:44 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(LIBFT):
 	@echo " [ OK ] | Ready!"
 
 clean:
-	@$(RM) $(OBJS) 
+	@$(RM) $(OBJS)
 	@echo "all objects were removed"
 	
 fclean: clean

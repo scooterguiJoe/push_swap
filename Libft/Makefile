@@ -6,7 +6,7 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 12:28:49 by guvascon          #+#    #+#              #
-#    Updated: 2025/02/20 12:25:41 by guvascon         ###   ########.fr        #
+#    Updated: 2025/03/03 16:34:12 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 	   ft_substr.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_strjoin.c \
 	   ft_putendl_fd.c ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c ft_strtrim.c \
-
+		ft_printf.c ft_print_format.c ft_print_pointer.c ft_putchar.c ft_putstr.c \
+		ft_strlenprintf.c
 OBJS = $(SRCS:.c=.o)
 
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
