@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:02:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/08 13:00:03 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/04 12:26:19 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	ft_strlen(const char *str)
 	}
 	return (i);
 }
-int main()
+/* int main()
 {
 	char *c;
 
 	c = "teste";
 	printf("%d\n,", ft_strlen(c));
-}
+} */

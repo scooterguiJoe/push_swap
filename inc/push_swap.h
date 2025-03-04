@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/03 16:29:22 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:09:43 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_node
 typedef struct s_stack
 {
 	int			*lenght;
-	void		*head;
-	void		*tail;
+	t_node		*head;
+	t_node		*tail;
 }	t_stack;
 
 

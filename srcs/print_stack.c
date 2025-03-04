@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/03 16:59:55 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:18:26 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,24 @@ void ft_lstnew(int content) // criar node
 
 void ft_lstaddfront(t_stack *lst,t_node *new) //criar nodes no inicio da stack B
 {
+	t_node *head;
+	
+	head = lst->head;
 	if(!lst || !new)
 		return;
-	if()//se a stack estiver vazia
+	if(!head)
 	{
-		
+		lst->head = new;
+		lst->tail = new;
+		lst->lenght = 1;
 	}
 	else
 	{
-		
-	
+		new->next = head;
+		new->previous = NULL;
+		head->previous = new;
+		lst->head = new;
+		lst->lenght++;
 	}
 }
 
@@ -78,5 +86,5 @@ void ft_clearlst(t_stack *lst)
 	lst->head = NULL;
 	lst->tail = NULL;
 }
-//void ft_printstack(t_node * stack, char )
+void ft_printstack(t_node * stack, char )
 
