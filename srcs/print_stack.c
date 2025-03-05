@@ -6,13 +6,13 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/04 13:18:26 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:16:09 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void ft_lstnew(int content) // criar node
+t_node *ft_newlst(int content) // criar node
 {
 	t_node *elm;
 	
@@ -22,11 +22,10 @@ void ft_lstnew(int content) // criar node
 	elm->content = content;
 	elm->previous = NULL;
 	elm->next = NULL;
-
 	return (elm);
 }
 
-void ft_lstaddfront(t_stack *lst,t_node *new) //criar nodes no inicio da stack B
+void ft_lstaddfront(t_stack *lst, t_node *new) //criar nodes no inicio da stack B
 {
 	t_node *head;
 	
@@ -53,7 +52,7 @@ void ft_lstaddback(t_stack *lst, t_node *new) //criar nodes no fim da stack A
 {
 	if(!lst || !new)
 		return;
-	if(lst->head = NULL)
+	if(lst->head == NULL)
 	{
 		lst->head = new;
 		lst->tail = new;
@@ -77,14 +76,38 @@ void ft_clearlst(t_stack *lst)
 	current = lst->head;
 	if(!lst)
 		return ;
-	while(current)
+	while(lst->head)
 	{
-		free(current -> content);
-		current = current ->next;
-		free(current->previous);
+		current= lst->head->next;
+		free(lst->head);
+		lst->head = current;
 	}
 	lst->head = NULL;
 	lst->tail = NULL;
+	lst->lenght = 0;
 }
-void ft_printstack(t_node * stack, char )
+void ft_printstack(t_stack *stack, char id)
+{
+	t_node *current;
+	if(!stack->head)
+		return ;
+	ft_printf("stack %c:\n\n", id);
+	current = stack->head;
+	while(current)
+	{
+		ft_printf("%i\n", current->content);
+		current = current->next;
+	}
+	ft_printf("%i\n", stack->tail->content);
+}
+#include <stdio.h>
+#include <unistd.h>
+int main()
+{
+	static t_stack *stack;
+	t_node *elm;
 
+	elm = ft_newlst(42);
+	ft_lstaddback(stack, elm);
+	ft_printstack(stack, 'a');
+}
