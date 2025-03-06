@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:24:18 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/05 16:02:35 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:07:44 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,18 @@ int ft_duplicate(t_list *a, int n)
 	}
 	return (0);
 }
-// void free_stack(t_node *stack)
-// {
-// 	t_node *current;
-// 	t_node *next_node;
+void free_stack(t_node *stack)
+{
+	t_node *current;
+	t_node *next_node;
 
-// 	if(!stack)
-// 		return ;
-// 	while(current != NULL)
-// 	{
-// 		next_node = current->next;
-// 		free(current->content);
-// 		free (current);
-// 		current = next_node;
-// 	}
-// }
+	if(!stack)
+		return ;
+	while(current != NULL)
+	{
+		next_node = current->next;
+		free(current->content);
+		free (current);
+		current = next_node;
+	}
+}

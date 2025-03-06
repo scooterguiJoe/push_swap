@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:10:16 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/05 17:02:00 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:25:14 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,18 @@ bool ft_isvalid(int ac, char **av)
 	while(i < av)
 	{
 		split = ft_split(av[i], ' ');
+		j = 0;
+		while(split[j])
+		{
+			if(!check_int(split[j]))
+			{
+				free_split(split);
+				return (false);
+			}
+			j++;
+		}
+		free_split(split);
+		i++;
 	}
+	return (true);
 }
