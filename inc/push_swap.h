@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/05 16:18:36 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:28:11 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h>
+# include <limits.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
@@ -54,5 +55,12 @@ void	ft_printstack(t_stack *stack, char id);
 //push.c
 int stack_len(t_list *a);
 long int ft_atol(char *str);
+
+//move_push.c
+void ft_swap(t_stack *src);
+void ft_push(t_stack *src, t_stack *dest);
+void ft_rotate(t_stack *src);
+void ft_rrotate(t_stack *src);
+void push(t_stack *stack, int value);
 
 # endif

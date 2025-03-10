@@ -6,12 +6,12 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 14:58:52 by guvascon          #+#    #+#              #
-#    Updated: 2025/03/05 16:18:06 by guvascon         ###   ########.fr        #
+#    Updated: 2025/03/10 17:01:41 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = srcs/push_swap.c srcs/aux.c srcs/print_stack.c
-
+SRCS = srcs/push_swap.c srcs/aux.c srcs/print_stack.c srcs/move_push.c \
+		
 OBJS = $(SRCS:.c=.o)
 
 CC = @cc

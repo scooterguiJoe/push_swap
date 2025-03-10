@@ -6,12 +6,16 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:10:16 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/06 12:25:14 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:28:48 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+// int ft_isnbr(char nbr)
+// {
+	
+// }
 int stack_len(t_list *a)
 {
 	int len;

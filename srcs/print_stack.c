@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/05 16:16:09 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:56:09 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,14 +100,14 @@ void ft_printstack(t_stack *stack, char id)
 	}
 	ft_printf("%i\n", stack->tail->content);
 }
-#include <stdio.h>
-#include <unistd.h>
-int main()
-{
-	static t_stack *stack;
-	t_node *elm;
+// #include <stdio.h>
+// #include <unistd.h>
+// int main()
+// {
+// 	static t_stack *stack;
+// 	t_node *elm;
 
-	elm = ft_newlst(42);
-	ft_lstaddback(stack, elm);
-	ft_printstack(stack, 'a');
-}
+// 	elm = ft_newlst(42);
+// 	ft_lstaddback(stack, elm);
+// 	ft_printstack(stack, 'a');
+// }
