@@ -6,50 +6,62 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:02:06 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/10 17:28:29 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:44:12 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void init_stack(t_stack *stack) {
-    stack->head = NULL;
-    stack->tail = NULL;
-    stack->lenght = 0;
+bool	ft_createstack(t_stack *stack, char **str)
+{
+	t_node *node;
+	int i;
+	long num;
+	
+	i = 0;
+	while(str[i])
+	{
+		num = ft_atol(str[i]);
+		if(!ft_duplicate(stack, (int)num))
+			write(1, "Error\n", 6);
+		node = ft_newlst((int)num);
+		if(!node)
+			return (false);
+		ft_lstaddback(stack, node);
+		i++;
+	}
+	return (true);
 }
-int main() {
-    t_stack stack_a, stack_b;
-    
-    // Inicializa as pilhas
-    init_stack(&stack_a);
-    init_stack(&stack_b);
+t_stack	ft_checkargs(int ac, char **av)
+{
+	int	i;
 
-    // Adiciona elementos à pilha A
-    push(&stack_a, 5);
-    push(&stack_a, 4);
-    push(&stack_a, 3);
-    push(&stack_a, 2);
-    push(&stack_a, 1);
-    
-    // Imprime a pilha original
-    ft_printstack(&stack_a, 'A');
+	i = 0;
+	while(i < ac)
+	
+	
+}
+int main(int argc, char **argv)
+{
+    t_stack stack_a;
+    stack_a.head = NULL;
+    stack_a.tail = NULL;
+	long value;
+	int i;
 
-    // Testa a função ft_swap
-    ft_swap(&stack_a);
-    ft_printstack(&stack_a, 'A');
-
-    // Testa a função ft_push (move o topo de A para B)
-    ft_push(&stack_a, &stack_b);
-    ft_printstack(&stack_a, 'A');
-    ft_printstack(&stack_b, 'B');
-
-    // Testa a função ft_rotate
-    ft_rotate(&stack_a);
-    ft_printstack(&stack_a, 'A');
-
-    // Testa a função ft_rrotate
-    ft_rrotate(&stack_a);
-    ft_printstack(&stack_a, 'A');
-
+	i = 1;
+    while (i < argc)
+    {
+        value = ft_atol(argv[i]);
+		if (value < INT_MIN || value > INT_MAX)
+		{
+				return (write(2, "Error\n", 6));
+				exit (0);
+		}
+        ft_lstaddback(&stack_a, ft_newlst(value));
+		i++;
+    }
+	ft_printstack(&stack_a, 'A');
+	ft_clearlst(&stack_a);
     return 0;
 }

@@ -6,18 +6,18 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/10 11:56:09 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:40:37 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_node *ft_newlst(int content) // criar node
+t_node	*ft_newlst(int content) // criar node
 {
-	t_node *elm;
-	
+	t_node	*elm;
+
 	elm = malloc(sizeof(t_node));
-	if(!elm)
+	if (!elm)
 		return (NULL);
 	elm->content = content;
 	elm->previous = NULL;
@@ -25,14 +25,14 @@ t_node *ft_newlst(int content) // criar node
 	return (elm);
 }
 
-void ft_lstaddfront(t_stack *lst, t_node *new) //criar nodes no inicio da stack B
+void	ft_lstaddfront(t_stack *lst, t_node *new) //criar nodes no inicio da stack B
 {
-	t_node *head;
-	
+	t_node	*head;
+
 	head = lst->head;
-	if(!lst || !new)
-		return;
-	if(!head)
+	if (!lst || !new)
+		return ;
+	if (!head)
 	{
 		lst->head = new;
 		lst->tail = new;
@@ -48,11 +48,11 @@ void ft_lstaddfront(t_stack *lst, t_node *new) //criar nodes no inicio da stack 
 	}
 }
 
-void ft_lstaddback(t_stack *lst, t_node *new) //criar nodes no fim da stack A
+void	ft_lstaddback(t_stack *lst, t_node *new) //criar nodes no fim da stack A
 {
-	if(!lst || !new)
-		return;
-	if(lst->head == NULL)
+	if (!lst || !new)
+		return ;
+	if (lst->head == NULL)
 	{
 		lst->head = new;
 		lst->tail = new;
@@ -69,45 +69,46 @@ void ft_lstaddback(t_stack *lst, t_node *new) //criar nodes no fim da stack A
 	lst->lenght++;
 }
 
-void ft_clearlst(t_stack *lst)
+void	ft_clearlst(t_stack *lst)
 {
-	t_node *current;
-	
+	t_node	*current;
+
 	current = lst->head;
-	if(!lst)
+	if (!lst)
 		return ;
-	while(lst->head)
+	while (lst->head)
 	{
-		current= lst->head->next;
+		current = lst->head->next;
 		free(lst->head);
 		lst->head = current;
 	}
-	lst->head = NULL;
-	lst->tail = NULL;
-	lst->lenght = 0;
 }
-void ft_printstack(t_stack *stack, char id)
+
+void	ft_printstack(t_stack *stack, char id)
 {
-	t_node *current;
-	if(!stack->head)
+	t_node	*current;
+
+	if (!stack->head)
 		return ;
-	ft_printf("stack %c:\n\n", id);
+	printf("stack %c:\n\n", id);
 	current = stack->head;
-	while(current)
+	while (current)
 	{
-		ft_printf("%i\n", current->content);
+		printf("%i\n", current->content);
 		current = current->next;
 	}
-	ft_printf("%i\n", stack->tail->content);
+	//printf("%i\n", stack->tail->content);
 }
 // #include <stdio.h>
 // #include <unistd.h>
 // int main()
 // {
-// 	static t_stack *stack;
-// 	t_node *elm;
-
-// 	elm = ft_newlst(42);
-// 	ft_lstaddback(stack, elm);
-// 	ft_printstack(stack, 'a');
+//     t_stack stack_a;
+//     stack_a.head = NULL;
+//     stack_a.tail = NULL;
+//     ft_lstaddfront(&stack_a, ft_newlst(10));
+//     ft_printstack(&stack_a, 'A');
+// 	ft_clearlst(&stack_a);
+// 	printf("cleaned\n");
+//     return 0;
 // }

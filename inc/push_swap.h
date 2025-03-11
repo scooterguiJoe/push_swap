@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/10 17:28:11 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:26:15 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ typedef struct s_stack
 }	t_stack;
 
 //aux.c
-int stack_len(t_list *a);
+int ft_isnbr(char *nbr);
+int ft_duplicate(t_list *a, int n);
 long int ft_atol(char *str);
+bool ft_isvalid(int ac, char **av);
 
 //check.c
-int check_int(char *str);
-int ft_duplicate(t_list *a, int n);
 void free_stack(t_node *stack);
 
 //print_stack.c
@@ -50,11 +50,9 @@ t_node	*ft_newlst(int content);
 void	ft_lstaddfront(t_stack *lst,t_node *new);
 void	ft_lstaddback(t_stack *lst, t_node *new);
 void	ft_printstack(t_stack *stack, char id);
+void ft_clearlst(t_stack *lst);
 
 //push_swap.c
-//push.c
-int stack_len(t_list *a);
-long int ft_atol(char *str);
 
 //move_push.c
 void ft_swap(t_stack *src);

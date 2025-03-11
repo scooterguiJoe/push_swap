@@ -6,13 +6,13 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:57:02 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/06 16:27:40 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:40:08 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void free_split(char **av)
+void	free_split(char **av)
 {
 	int	i;
 
@@ -23,5 +23,4 @@ void free_split(char **av)
 		i++;
 	}
 	free(av);
-	return ;
 }
