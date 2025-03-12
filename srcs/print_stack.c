@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/11 17:40:37 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:56:59 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_clearlst(t_stack *lst)
 		free(lst->head);
 		lst->head = current;
 	}
+	free (lst);
 }
 
 void	ft_printstack(t_stack *stack, char id)

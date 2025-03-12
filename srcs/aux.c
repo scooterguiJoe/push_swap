@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/11 17:33:32 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:52:52 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_isnbr(char *nbr)
 	return (true);
 }
 
-int	ft_duplicate(t_list *a, int n)//por testar
+/* int	ft_duplicate(t_list *a, int n)//por testar
 {
 	if (!a)
 		return (0);
@@ -39,7 +39,7 @@ int	ft_duplicate(t_list *a, int n)//por testar
 		a = a->next;
 	}
 	return (0);
-}
+} */
 
 long	ft_atol(char *str)
 {
@@ -76,13 +76,13 @@ bool	ft_isvalid(int ac, char **av)
 	int		j;
 
 	i = 1;
-	while (i < av)
+	while (i < ac)
 	{
 		split = ft_split(av[i], ' ');
 		j = 0;
-		while (split[j])
+		while (av[j])
 		{
-			if (!check_int(split[j]))
+			if (!ft_isnbr(av[j]))
 			{
 				free_split(split);
 				return (false);

@@ -6,13 +6,13 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:10:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/11 17:37:03 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/12 12:13:37 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_swap(t_stack *src)
+/* void	ft_swap(t_stack *src)
 {
 	t_node	*top;
 	t_node	*second;
@@ -30,9 +30,9 @@ void	ft_swap(t_stack *src)
 	second->next = top;
 	src->head = second;
 	ft_printf("s");
-}
+} */
 
-void	ft_push(t_stack *src, t_stack *dest)
+/* void	ft_push(t_stack *src, t_stack *dest)
 {
 	t_node	*tmp;
 
@@ -43,9 +43,9 @@ void	ft_push(t_stack *src, t_stack *dest)
 	src->lenght--;
 	ft_lstadd_front(dest, tmp);
 	ft_printf("p\n");
-}
+} */
 
-void	ft_rotate(t_stack *src)
+/* void	ft_rotate(t_stack *src)
 {
 	t_node	*tmp;
 
@@ -58,9 +58,9 @@ void	ft_rotate(t_stack *src)
 	tmp->next = NULL;
 	src->tail = tmp;
 	ft_printf("r\n");
-}
+} */
 
-void	ft_rrotate(t_stack *src)
+/* void	ft_rrotate(t_stack *src)
 {
 	t_node	*tmp;
 
@@ -74,9 +74,9 @@ void	ft_rrotate(t_stack *src)
 	src->head = tmp;
 	tmp->previous;
 	ft_printf("rr\n");
-}
+} */
 
-void	push(t_stack *stack, int value)
+/* void	push(t_stack *stack, int value)
 {
 	t_node	*new_node;
 
@@ -90,4 +90,4 @@ void	push(t_stack *stack, int value)
 	if (stack->tail == NULL)
 		stack->tail = new_node;
 	stack->lenght++;
-}
+} */

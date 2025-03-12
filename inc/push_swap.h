@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/11 15:26:15 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:25:05 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ typedef struct s_stack
 int ft_isnbr(char *nbr);
 int ft_duplicate(t_list *a, int n);
 long int ft_atol(char *str);
-bool ft_isvalid(int ac, char **av);
+void	free_split(char **av);
+bool	ft_isvalid(int ac, char **av);
 
 //check.c
 void free_stack(t_node *stack);
@@ -53,6 +54,7 @@ void	ft_printstack(t_stack *stack, char id);
 void ft_clearlst(t_stack *lst);
 
 //push_swap.c
+t_stack ft_checkargs(int ac, char **av);
 
 //move_push.c
 void ft_swap(t_stack *src);
