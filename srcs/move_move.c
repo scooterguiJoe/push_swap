@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_utils.c                                       :+:      :+:    :+:   */
+/*   move_move.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 16:57:02 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/24 15:49:40 by guvascon         ###   ########.fr       */
+/*   Created: 2025/03/24 11:48:24 by guvascon          #+#    #+#             */
+/*   Updated: 2025/03/24 12:25:51 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	free_split(char **av)
-{
-	int	i;
-
-	i = 0;
-	while (av[i])
-	{
-		free(av[i]);
-		i++;
-	}
-	free(av);
-}
-
-bool	is_sorted(t_stack *stack)
-{
-	t_node	*current;
-	
-	current = stack->head;
-	while(current->next != NULL)
-	{
-		if(current->value > current->next->value)
-			return (false);
-		current = current->next;
-	}
-	return (true);
-}
-// void ft_error()
+// void	ft_ss (t_stack *stack_a, t_stack *stack_b)
 // {
-// 	write(1, "error\n", 6);
-// 	return(1);
+// 	ft_swap(&stack_a);
+// 	ft_swap(&stack_b);
+// 	write(1, "ss\n", 3);
+// }
+
+// void	ft_rr (t_stack *stack_a, t_stack *stack_b)
+// {
+// 	ft_rotate(&stack_a);
+// 	ft_rotate(&stack_b);
+// 	write(1, "rr\n", 3);
+// }
+
+// void	ft_rrr (t_stack *stack_a, t_stack *stack_b)
+// {
+// 	ft_rrotate(&stack_a);
+// 	ft_rrotate(&stack_b);
+// 	write(1, "rrr\n", 4);
 // }

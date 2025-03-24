@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/12 14:52:52 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:27:28 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,19 @@ int	ft_isnbr(char *nbr)
 	return (true);
 }
 
-/* int	ft_duplicate(t_list *a, int n)//por testar
+bool	ft_duplicate(t_stack *stack, int n)
 {
-	if (!a)
-		return (0);
-	while (a)
+	t_node	*node;
+
+	node = stack->head;
+	while(node)
 	{
-		if (a->content == n)
-			return (1);
-		a = a->next;
+		if(node->value == n)
+			return (false);
+		node = node->next;
 	}
-	return (0);
-} */
+	return (true);
+}
 
 long	ft_atol(char *str)
 {

@@ -12,75 +12,46 @@
 
 #include "../inc/push_swap.h"
 
-// // bool	ft_createstack(t_stack *stack, char **str)
-// // {
-// // 	t_node *node;
-// // 	int i;
-// // 	long num;
-	
-// // 	i = 0;
-// // 	while(str[i])
-// // 	{
-// // 		num = ft_atol(str[i]);
-// // 		if(!ft_duplicate(stack, (int)num))
-// // 			write(1, "Error\n", 6);
-// // 		node = ft_newlst((int)num);
-// // 		if(!node)
-// // 			return (false);
-// // 		ft_lstaddback(stack, node);
-// // 		i++;
-// // 	}
-// // 	return (true);
-// // }
-// // t_stack	ft_checkargs(int ac, char **av)
-// // {
-// // 	int	i;
+#include "../inc/push_swap.h"
 
-// // 	i = 0;
-// // 	while(i < ac)
-	
-	
-// // }
-int main(int argc, char **argv)
+bool	ft_createstack(t_stack *stack, char **str)
 {
-    t_stack stack_a;
-    stack_a.head = NULL;
-    stack_a.tail = NULL;
-	long value;
+	t_node *node;
 	int i;
-	int j;
-	char **split;
-
-	i = 1;
-	while (i < argc)
+	long num;
+	
+	i = 0;
+	while(str[i])
 	{
-		split = ft_split(argv[i], ' ');
-		j = 0;
-		while(split[j])
-		{
-			value = ft_atol(split[j]);
-			if (value < INT_MIN || value > INT_MAX)
-			{
-				free_split(split);
-				return (write(2, "Error\n", 6));
-				//exit (1);
-			}
-			ft_lstaddback(&stack_a, ft_newlst(value));
-			j++;
-		}
-		j = 0;
-		while (split[j])
-		{
-			//free(split[j]);
-			j++;
-		}
-		free_split(split);
+		num = ft_atol(str[i]);
+		if(!ft_duplicate(stack, (int)num))
+			write(1, "Error\n", 6);
+		node = ft_newlst((int)num);
+		if(!node)
+			return (false);
+		ft_lstaddback(stack, node);
 		i++;
 	}
+	return (true);
+}
+
+/* int main(int ac, char **av)
+{
+	t_stack stack_a;
+	t_stack stack_b;
+
+	if(ac < 2)
+		write(1, "error\n", 6);
+	stack_a = ft_checkargs(ac, av);
+	if(stack_a.lenght == 0)
+		write(1, "error\n", 6);
+	if(is_sorted(&stack_a))
+		ft_clearlst(&stack_a);
 	ft_printstack(&stack_a, 'A');
 	ft_clearlst(&stack_a);
-	return 0;
-}
+	
+} */
+
 
 t_stack ft_checkargs(int ac, char **av)
 {

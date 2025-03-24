@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/12 15:25:05 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:39:16 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 
 typedef struct s_node
 {
+	int				value;
+	int				rank;
 	int				content;
 	struct s_node	*previous;
 	struct s_node	*next;
@@ -38,29 +40,39 @@ typedef struct s_stack
 
 //aux.c
 int ft_isnbr(char *nbr);
-int ft_duplicate(t_list *a, int n);
+bool	ft_duplicate(t_stack *stack, int n);
 long int ft_atol(char *str);
-void	free_split(char **av);
 bool	ft_isvalid(int ac, char **av);
 
 //check.c
-void free_stack(t_node *stack);
+//void free_stack(t_node *stack);
 
 //print_stack.c
 t_node	*ft_newlst(int content);
 void	ft_lstaddfront(t_stack *lst,t_node *new);
 void	ft_lstaddback(t_stack *lst, t_node *new);
 void	ft_printstack(t_stack *stack, char id);
-void ft_clearlst(t_stack *lst);
+void 	ft_clearlst(t_stack *lst);
 
 //push_swap.c
 t_stack ft_checkargs(int ac, char **av);
+//void	normalize(t_stack *stack);
+bool	ft_createstack(t_stack *stack, char **str);
 
 //move_push.c
-void ft_swap(t_stack *src);
-void ft_push(t_stack *src, t_stack *dest);
-void ft_rotate(t_stack *src);
-void ft_rrotate(t_stack *src);
-void push(t_stack *stack, int value);
+void ft_swap(t_stack *src, char flag);
+void ft_push(t_stack *src, t_stack *dest, char flag);
+void ft_rotate(t_stack *src, char flag);
+void ft_rrotate(t_stack *src, char flag);
+//void push(t_stack *stack, int value);
+
+//move_move.c
+void	ft_ss(t_stack *stack_a, t_stack *stack_b);
+void	ft_rr(t_stack *stack_a, t_stack *stack_b);
+void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
+
+//push_utils.c
+void	free_split(char **av);
+bool	is_sorted(t_stack *stack);
 
 # endif
