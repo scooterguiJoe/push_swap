@@ -35,22 +35,22 @@ bool	ft_createstack(t_stack *stack, char **str)
 	return (true);
 }
 
-/* int main(int ac, char **av)
-{
-	t_stack stack_a;
-	t_stack stack_b;
+// int main(int ac, char **av)
+// {
+// 	static t_stack stack_a;
+// 	static t_stack stack_b;
 
-	if(ac < 2)
-		write(1, "error\n", 6);
-	stack_a = ft_checkargs(ac, av);
-	if(stack_a.lenght == 0)
-		write(1, "error\n", 6);
-	if(is_sorted(&stack_a))
-		ft_clearlst(&stack_a);
-	ft_printstack(&stack_a, 'A');
-	ft_clearlst(&stack_a);
+// 	if(ac < 2)
+// 		write(1, "error\n", 6);
+// 	stack_a = ft_checkargs(ac, av);
+// 	if(stack_a.lenght == 0)
+// 		write(1, "error\n", 6);
+// 	if(is_sorted(&stack_a))
+// 		ft_clearlst(&stack_a);
+// 	ft_printstack(&stack_a, 'A');
+// 	ft_clearlst(&stack_a);
 	
-} */
+// }
 
 
 t_stack ft_checkargs(int ac, char **av)
@@ -79,3 +79,24 @@ t_stack ft_checkargs(int ac, char **av)
 	}
 	return (stack);
 }
+// void	ft_normalize(t_stack *stack)
+// {
+// 	t_node	*tmp;
+// 	t_node	*current;
+// 	int		rank;
+
+// 	current = stack->head;
+// 	while(current)
+// 	{
+// 		rank = 1;
+// 		tmp = stack->head;
+// 		while(tmp)
+// 		{
+// 			if(current->value > tmp->value)
+// 				rank++;
+// 			tmp = tmp->next;
+// 		}
+// 		current->rank = rank;
+// 		current = current->next;
+// 	}
+// }

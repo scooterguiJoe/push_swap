@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/24 16:39:16 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:06:11 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef struct s_node
 {
-	int				value;
+	long			value;
 	int				rank;
 	int				content;
 	struct s_node	*previous;
@@ -39,13 +39,13 @@ typedef struct s_stack
 }	t_stack;
 
 //aux.c
-int ft_isnbr(char *nbr);
-bool	ft_duplicate(t_stack *stack, int n);
-long int ft_atol(char *str);
-bool	ft_isvalid(int ac, char **av);
+int			ft_isnbr(char *nbr);
+bool		ft_duplicate(t_stack *stack, int n);
+long int 	ft_atol(char *str);
+bool		ft_isvalid(int ac, char **av);
 
 //check.c
-//void free_stack(t_node *stack);
+void free_stack(t_node *stack);
 
 //print_stack.c
 t_node	*ft_newlst(int content);
@@ -56,7 +56,7 @@ void 	ft_clearlst(t_stack *lst);
 
 //push_swap.c
 t_stack ft_checkargs(int ac, char **av);
-//void	normalize(t_stack *stack);
+void	ft_normalize(t_stack *stack);
 bool	ft_createstack(t_stack *stack, char **str);
 
 //move_push.c
@@ -75,4 +75,8 @@ void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
 void	free_split(char **av);
 bool	is_sorted(t_stack *stack);
 
+//radix_sort.c
+int		count_bits(int num);
+void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+void set_ranks(t_stack *stack);
 # endif
