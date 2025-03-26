@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:30:58 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/25 17:10:21 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:28:35 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@
 // 	return 0;
 // }
 
-int main(int argc, char **argv)
+ int main(int argc, char **argv)
 {
     t_stack stack_a;
     t_stack stack_b;
@@ -92,13 +92,15 @@ int main(int argc, char **argv)
         i++;
 	}
     ft_printstack(&stack_a, 'A');
-	
+	ft_normalize(&stack_a);
+    ft_printstack(&stack_a, 'A');
     radix_sort(&stack_a, &stack_b);
     ft_printstack(&stack_a, 'A');
     ft_clearlst(&stack_a);
     ft_clearlst(&stack_b);
 	return 0;
-}
+} 
+
 // int main(int argc, char **argv)
 // {
 //     t_stack stack_a;

@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:10:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/24 16:37:59 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:44:39 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,3 +90,4 @@ void	ft_rrotate(t_stack *src, char flag)
 // 		stack->tail = new_node;
 // 	stack->lenght++;
 // }
+

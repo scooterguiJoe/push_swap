@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 12:04:20 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/25 17:16:28 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:09:06 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,20 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 	int	i;
 
 	i = 0;
-	printf("teste\n");
-	while(!is_sorted(stack_a))
+
+	while(is_sorted(stack_a) == 1)
 	{
-		printf("teste1\n");
 		max = stack_a->lenght;
 		while(max > 0)
 		{
-			printf("teste22\n");
 			if(stack_a->head->rank & (1 << i))
 				ft_rotate(stack_a, 'A');
 			else
 				ft_push(stack_a, stack_b, 'b');
 			max--;
 		}
+        while(stack_b->lenght > 0)
+		    ft_push(stack_b, stack_a, 'a');
 		i++;
-	}
-	while(stack_b->lenght > 0)
-		ft_push(stack_b, stack_a, 'a');
+    }
 }
-
-

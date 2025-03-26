@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/25 16:59:44 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:26:59 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,11 @@ void	ft_printstack(t_stack *stack, char id)
 	current = stack->head;
 	while (current)
 	{
-		printf("%i\n", current->content);
+		printf("content: %i\n", current->content);
+		printf("rank: %i\n", current->rank);
 		current = current->next;
 	}
-	//printf("%i\n", stack->tail->content);
+	//printf("%i\n", stack->lenght);
 }
 // #include <stdio.h>
 // #include <unistd.h>

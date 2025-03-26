@@ -79,24 +79,24 @@ t_stack ft_checkargs(int ac, char **av)
 	}
 	return (stack);
 }
-// void	ft_normalize(t_stack *stack)
-// {
-// 	t_node	*tmp;
-// 	t_node	*current;
-// 	int		rank;
+void	ft_normalize(t_stack *stack)
+{
+	t_node	*tmp;
+	t_node	*current;
+	int		rank;
 
-// 	current = stack->head;
-// 	while(current)
-// 	{
-// 		rank = 1;
-// 		tmp = stack->head;
-// 		while(tmp)
-// 		{
-// 			if(current->value > tmp->value)
-// 				rank++;
-// 			tmp = tmp->next;
-// 		}
-// 		current->rank = rank;
-// 		current = current->next;
-// 	}
-// }
+	current = stack->head;
+	while(current)
+	{
+		rank = 1;
+		tmp = stack->head;
+		while(tmp)
+		{	
+			if(current->content > tmp->content)
+					rank++;
+			tmp = tmp->next;
+		}
+		current->rank = rank;
+		current = current->next;
+	}
+}

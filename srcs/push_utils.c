@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:57:02 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/25 17:12:51 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:01:21 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,20 @@ void	free_split(char **av)
 	free(av);
 }
 
-bool	is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	t_node	*current;
 	
 	current = stack->head;
 	while(current->next != NULL)
 	{
-		if(current->value > current->next->value)
+		if(current->content < current->next->content)
 		{
-			printf("oi\n");
-			return (false);
+			return (1);
 		}
 		current = current->next;
 	}
-	printf("oi\n");
-	return (true);
+	return (0);
 }
 // void ft_error()
 // {
