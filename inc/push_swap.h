@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/26 16:18:10 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:07:38 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,9 @@ int		is_sorted(t_stack *stack);
 //radix_sort.c
 int		count_bits(int num);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+
+//short_sort.c
+void sorting_two(t_stack *stack_a);
+void sorting_three(t_stack *stack_a);
 
 # endif
