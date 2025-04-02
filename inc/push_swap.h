@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/01 17:07:38 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:10:49 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 //short_sort.c
 void sorting_two(t_stack *stack_a);
 void sorting_three(t_stack *stack_a);
+void sorting_four_five(t_stack *stack_a, t_stack *stack_b);
+void	final_sorting(t_stack *stack_a, t_stack *stack_b);
 
 # endif

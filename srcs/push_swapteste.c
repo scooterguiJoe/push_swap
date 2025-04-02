@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:30:58 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/01 15:22:21 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:36:18 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,25 @@
         free_split(split);
         i++;
 	}
+    // ft_printstack(&stack_a, 'A');
+	// ft_normalize(&stack_a);
+    // ft_printstack(&stack_a, 'A');
+    // radix_sort(&stack_a, &stack_b);
+    // ft_printstack(&stack_a, 'A');
+    // ft_clearlst(&stack_a);
+    // ft_clearlst(&stack_b);
+	// return 0;
+    ft_normalize(&stack_a);
     ft_printstack(&stack_a, 'A');
-	ft_normalize(&stack_a);
-    ft_printstack(&stack_a, 'A');
-    radix_sort(&stack_a, &stack_b);
-    ft_printstack(&stack_a, 'A');
-    ft_clearlst(&stack_a);
-    ft_clearlst(&stack_b);
-	return 0;
+	if (stack_a.lenght <= 5)
+    {
+		final_sorting(&stack_a, &stack_b);
+        ft_printstack(&stack_a, 'A');
+    }
+	else
+		radix_sort(&stack_a, &stack_b);
+	ft_clearlst(&stack_a);
+	return (0);
 } 
 
 
