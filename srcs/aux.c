@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/26 16:24:15 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/03 14:14:47 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ bool	ft_duplicate(t_stack *stack, int n)
 	while(node)
 	{
 		if(node->content == n)
+		{
+			write(1, "Duplicate found!\n", 17);
 			return (false);
+		}
 		node = node->next;
 	}
 	return (true);
@@ -79,7 +82,7 @@ bool	ft_isvalid(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		split = ft_split(av[i], ' ');
+		split = av;
 		j = 0;
 		while (av[j])
 		{

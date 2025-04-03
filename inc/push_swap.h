@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/02 16:10:49 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:54:30 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
 //push_utils.c
 void	free_split(char **av);
 int		is_sorted(t_stack *stack);
+void	all_clear(char **str, t_stack *stack);
 
 //radix_sort.c
 int		count_bits(int num);

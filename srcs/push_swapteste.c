@@ -6,13 +6,13 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:30:58 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/02 17:36:18 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/03 12:28:19 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
- int main(int argc, char **argv)
+/* 
+  int main(int argc, char **argv)
 {
     t_stack stack_a;
     t_stack stack_b;
@@ -29,7 +29,7 @@
     char **split;
 
     i = 1;
-    while (i < argc)
+     while (i < argc)
     {
         split = ft_split(argv[i], ' ');
         j = 0;
@@ -47,14 +47,6 @@
         free_split(split);
         i++;
 	}
-    // ft_printstack(&stack_a, 'A');
-	// ft_normalize(&stack_a);
-    // ft_printstack(&stack_a, 'A');
-    // radix_sort(&stack_a, &stack_b);
-    // ft_printstack(&stack_a, 'A');
-    // ft_clearlst(&stack_a);
-    // ft_clearlst(&stack_b);
-	// return 0;
     ft_normalize(&stack_a);
     ft_printstack(&stack_a, 'A');
 	if (stack_a.lenght <= 5)
@@ -66,7 +58,7 @@
 		radix_sort(&stack_a, &stack_b);
 	ft_clearlst(&stack_a);
 	return (0);
-} 
+}   */
 
 
 // int main(int argc, char **argv)
