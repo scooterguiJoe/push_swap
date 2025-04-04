@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/03 14:14:47 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 17:58:30 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	ft_isnbr(char *nbr)
 	while (nbr[i])
 	{
 		if (!ft_isdigit(nbr[i]))
-			return (false);
+			return (0);
 		i++;
 	}
-	return (true);
+	return (1);
 }
 
 bool	ft_duplicate(t_stack *stack, int n)
@@ -33,13 +33,10 @@ bool	ft_duplicate(t_stack *stack, int n)
 	t_node	*node;
 
 	node = stack->head;
-	while(node)
+	while (node)
 	{
-		if(node->content == n)
-		{
-			write(1, "Duplicate found!\n", 17);
+		if (node->content == n)
 			return (false);
-		}
 		node = node->next;
 	}
 	return (true);
@@ -94,6 +91,24 @@ bool	ft_isvalid(int ac, char **av)
 			j++;
 		}
 		i++;
+	}
+	return (true);
+}
+
+bool	ft_checkspaces(char **av)
+{
+	int	i;
+	int	j;
+
+	j = 1;
+	while (av[j])
+	{
+		i = 0;
+		while (av[j][i] && white_spaces(av[j][i]))
+			i++;
+		if (av[j][i] == '\0')
+			return (false);
+		j++;
 	}
 	return (true);
 }

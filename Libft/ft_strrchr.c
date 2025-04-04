@@ -6,12 +6,11 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:12:31 by guvascon          #+#    #+#             */
-/*   Updated: 2024/11/22 17:38:25 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:02:48 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//Procura a primeira ocurrencia de um caractere a comecar de tras pra frente (R - reverse)
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -29,10 +28,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	const char *str = "patio";
-// 	char d = 't';
-// 	char *result = ft_strrchr(str, d);
-// 	printf("Result: %s\n", result);
-// }

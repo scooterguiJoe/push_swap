@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:25:37 by guvascon          #+#    #+#             */
-/*   Updated: 2024/11/22 15:28:58 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:01:45 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,34 +33,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (list);
 }
-// int main()
-// {
-//     t_list *list = NULL;
-//     t_list *mapped_list;
-	
-//     t_list *node1 = ft_lstnew(malloc(sizeof(int)));
-//     *((int *)node1->content) = 1;
-//     ft_lstadd_back(&list, node1);
-
-//     t_list *node2 = ft_lstnew(malloc(sizeof(int)));
-//     *((int *)node2->content) = 2;
-//     ft_lstadd_back(&list, node2);
-
-//     t_list *node3 = ft_lstnew(malloc(sizeof(int)));
-//     *((int *)node3->content) = 3;
-//     ft_lstadd_back(&list, node3);
-	
-//     mapped_list = ft_lstmap(list, double_content, del);
-
-//     t_list *temp = mapped_list;
-//     while (temp)
-//     {
-//         printf("%d -> ", *((int *)temp->content));
-//         temp = temp->next;
-//     }
-
-//     ft_lstclear(&list, del);
-//     ft_lstclear(&mapped_list, del);
-
-//     return 0;
-// }

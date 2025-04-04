@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:01:20 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/03 16:31:33 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:04:08 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,8 @@ int	ft_putnbr_base(long nbr, char *base)
 	{
 		count += ft_putnbr_base(nbr / ft_strlen(base), base);
 	}
-		mod = base[nbr % ft_strlen(base)];
-		write (1, &mod, 1);
+	mod = base[nbr % ft_strlen(base)];
+	write (1, &mod, 1);
 	count++;
 	return (count);
 }
-// int main()
-// {
-// 	int count;
-
-// 	count = 0;
-//     count += ft_putnbr_base(2147483647, DEC);
-//     write(1, "\n", 1);
-// }

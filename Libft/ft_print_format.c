@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:43:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/03 16:31:51 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:03:47 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ int	ft_print_format(char specifier, va_list *args)
 		count += ft_putchar('%');
 	else
 		count += ft_putchar(specifier);
-	//count++;
 	return (count);
 }

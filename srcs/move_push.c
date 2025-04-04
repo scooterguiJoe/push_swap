@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:10:57 by guvascon          #+#    #+#             */
-/*   Updated: 2025/03/26 15:44:39 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/04 17:58:56 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_push(t_stack *src, t_stack *dest, char flag)
 	ft_printf("p%c\n", flag);
 }
 
-void	ft_rotate(t_stack *src, char flag)
+void	ft_rotate(t_stack *src, char flag, int both)
 {
 	t_node	*tmp;
 
@@ -57,7 +57,8 @@ void	ft_rotate(t_stack *src, char flag)
 	tmp->previous = src->tail;
 	tmp->next = NULL;
 	src->tail = tmp;
-	ft_printf("r%c\n", flag);
+	if (both > 0)
+		ft_printf("r%c\n", flag);
 }
 
 void	ft_rrotate(t_stack *src, char flag)
@@ -74,20 +75,3 @@ void	ft_rrotate(t_stack *src, char flag)
 	src->head = tmp;
 	ft_printf("rr%c\n", flag);
 }
-
-// void	push(t_stack *stack, int value)
-// {
-// 	t_node	*new_node;
-
-// 	new_node = malloc(sizeof(t_node));
-// 	new_node->content = value;
-// 	new_node->next = stack->head;
-// 	new_node->previous = NULL;
-// 	if (stack->head != NULL)
-// 		stack->head->previous = new_node;
-// 	stack->head = new_node;
-// 	if (stack->tail == NULL)
-// 		stack->tail = new_node;
-// 	stack->lenght++;
-// }
-
