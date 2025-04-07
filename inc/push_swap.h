@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/04 18:05:07 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:13:25 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			ft_isnbr(char *nbr);
 bool		ft_duplicate(t_stack *stack, int n);
 long int	ft_atol(char *str);
 bool		ft_isvalid(int ac, char **av);
-bool		ft_checkspaces(char **av);
+bool		ft_checkwspaces(char **av);
 
 //check.c
 void		free_stack(t_node *stack);
@@ -58,7 +58,7 @@ void		ft_clearlst(t_stack *lst);
 t_stack		ft_checkargs(int ac, char **av);
 void		ft_normalize(t_stack *stack);
 bool		ft_createstack(t_stack *stack, char **str);
-void		process_stack(t_stack *stack_a, t_stack *stack_b);
+void		ft_processstack(t_stack *stack_a, t_stack *stack_b);
 
 //move_push.c
 void		ft_swap(t_stack *src, char flag);

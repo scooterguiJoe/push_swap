@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:26:27 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/04 17:57:54 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:34:14 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ bool	ft_createstack(t_stack *stack, char **str)
 	return (true);
 }
 
-void	process_stack(t_stack *stack_a, t_stack *stack_b)
+void	ft_processstack(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_normalize(stack_a);
-	ft_printstack(stack_a, 'A');
 	if (stack_a->lenght <= 5)
 	{
 		final_sorting(stack_a, stack_b);
@@ -60,13 +59,13 @@ int	main(int argc, char **argv)
 	static t_stack	stack_a;
 	static t_stack	stack_b;
 
-	if (ft_checkspaces(argv) == false)
+	if (ft_checkwspaces(argv) == false)
 		return (write (1, "Error\n", 6));
 	stack_a = ft_checkargs(argc, argv);
 	if (stack_a.lenght == 0)
 		return (0);
 	if (is_sorted(&stack_a) == 0)
-		process_stack(&stack_a, &stack_b);
+		ft_processstack(&stack_a, &stack_b);
 	ft_clearlst(&stack_a);
 	return (0);
 }
@@ -85,15 +84,9 @@ t_stack	ft_checkargs(int ac, char **av)
 		if (!str)
 			all_clear(0, &stack);
 		if (!ft_isvalid(ac, str))
-		{
-			ft_clearlst(&stack);
-			return (stack);
-		}
+			return (ft_clearlst(&stack), stack);
 		if (!ft_createstack(&stack, str))
-		{
-			all_clear(str, &stack);
-			return (stack);
-		}
+			return (all_clear(str, &stack), stack);
 		free_split(str);
 		i++;
 	}

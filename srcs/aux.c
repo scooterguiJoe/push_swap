@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/04 17:58:30 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:03:49 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ bool	ft_isvalid(int ac, char **av)
 	return (true);
 }
 
-bool	ft_checkspaces(char **av)
+bool	ft_checkwspaces(char **av)
 {
 	int	i;
 	int	j;
@@ -106,7 +106,7 @@ bool	ft_checkspaces(char **av)
 		i = 0;
 		while (av[j][i] && white_spaces(av[j][i]))
 			i++;
-		if (av[j][i] == '\0')
+		if (av[j][0] == '\0')
 			return (false);
 		j++;
 	}

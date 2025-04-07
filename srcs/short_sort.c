@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:34:50 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/04 17:18:59 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:33:32 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	sorting_four_five(t_stack *stack_a, t_stack *stack_b)
 		}
 		if (stack_b->head->rank == 1)
 			ft_swap(stack_b, 'b');
-		ft_push(stack_b, stack_a, 'b');
 		ft_push(stack_b, stack_a, 'b');
 	}
 }
