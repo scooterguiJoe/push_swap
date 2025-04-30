@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:26:27 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/07 11:34:14 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:03:54 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void	ft_processstack(t_stack *stack_a, t_stack *stack_b)
 	if (stack_a->lenght <= 5)
 	{
 		final_sorting(stack_a, stack_b);
-		ft_printstack(stack_a, 'A');
+		ft_printstack(stack_a);
 	}
 	else
 		radix_sort(stack_a, stack_b);
 	ft_clearlst(stack_a);
-}
+}   
 
 int	main(int argc, char **argv)
 {

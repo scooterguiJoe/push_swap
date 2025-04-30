@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/07 11:13:25 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/22 12:24:51 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,11 @@ long int	ft_atol(char *str);
 bool		ft_isvalid(int ac, char **av);
 bool		ft_checkwspaces(char **av);
 
-//check.c
-void		free_stack(t_node *stack);
-
 //print_stack.c
 t_node		*ft_newlst(int content);
 void		ft_lstaddfront(t_stack *lst, t_node *new);
 void		ft_lstaddback(t_stack *lst, t_node *new);
-void		ft_printstack(t_stack *stack, char id);
+void		ft_printstack(t_stack *stack);
 void		ft_clearlst(t_stack *lst);
 
 //push_swap.c

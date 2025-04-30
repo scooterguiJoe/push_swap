@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/07 11:03:49 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:11:40 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,18 @@ int	ft_isnbr(char *nbr)
 	i = 0;
 	if (nbr[i] == '+' || nbr[i] == '-')
 		i++;
+	if (!nbr[i])
+	{
+		write (1, "Error\n", 6);
+		return (0);
+	}
 	while (nbr[i])
 	{
 		if (!ft_isdigit(nbr[i]))
+		{
+			write(1, "Error\n", 6);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -51,7 +59,7 @@ long	ft_atol(char *str)
 	count = 0;
 	sign = 1;
 	num = 0;
-	while (str[count] == 32 || (str[count] >= 9 && str[count] <= 13))
+	if (str[count] == 32 || (str[count] >= 9 && str[count] <= 13))
 		count++;
 	if (str[count] == '+' || str[count] == '-')
 	{
@@ -63,8 +71,6 @@ long	ft_atol(char *str)
 	{
 		num *= 10;
 		num += str[count] - 48;
-		if (num > INT_MAX || num < INT_MIN)
-			break ;
 		count++;
 	}
 	return (num * sign);
@@ -79,15 +85,18 @@ bool	ft_isvalid(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		// split = ft_split(av[i], ' ');
 		split = av;
 		j = 0;
+		// if (!split)
+		// {
+		// 	write(1, "Error\n", 6);
+		// 	return (false);
+		// }
 		while (av[j])
 		{
 			if (!ft_isnbr(av[j]))
-			{
-				free_split(split);
-				return (false);
-			}
+				return (free_split(split), false);
 			j++;
 		}
 		i++;
