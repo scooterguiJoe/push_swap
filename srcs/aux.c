@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/30 14:11:40 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:02:10 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ft_isnbr(char *nbr)
 		i++;
 	if (!nbr[i])
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		return (0);
 	}
 	while (nbr[i])
 	{
 		if (!ft_isdigit(nbr[i]))
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			return (0);
 		}
 		i++;
@@ -60,7 +60,13 @@ long	ft_atol(char *str)
 	sign = 1;
 	num = 0;
 	if (str[count] == 32 || (str[count] >= 9 && str[count] <= 13))
+	{
 		count++;
+		if(ft_isdigit(str[count + 1]) || str[count + 1] != '+' || str[count + 1] != '-')
+		{ft_printf("error\n");
+			return (0);
+		}
+	}
 	if (str[count] == '+' || str[count] == '-')
 	{
 		if (str[count] == '-')
@@ -85,15 +91,14 @@ bool	ft_isvalid(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		// split = ft_split(av[i], ' ');
 		split = av;
 		j = 0;
-		// if (!split)
-		// {
-		// 	write(1, "Error\n", 6);
-		// 	return (false);
-		// }
-		while (av[j])
+		if (!split)
+		{
+			write(2, "Error\n", 6);
+			return (false);
+		}
+		while (split[j])
 		{
 			if (!ft_isnbr(av[j]))
 				return (free_split(split), false);
@@ -108,17 +113,24 @@ bool	ft_checkwspaces(char **av)
 {
 	int	i;
 	int	j;
-
+	int check = 0;
+	
 	j = 1;
 	while (av[j])
 	{
 		i = 0;
-		while (av[j][i] && white_spaces(av[j][i]))
+		while (av[j][i])
+		{
+			if (white_spaces(av[j][i]))
+				check++;
 			i++;
+		}
 		if (av[j][0] == '\0')
 			return (false);
 		j++;
 	}
+	if (check == 0)
+		return(false);
 	return (true);
 }
 // #include <unistd.h>

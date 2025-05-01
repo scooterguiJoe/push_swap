@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:26:27 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/30 14:03:54 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:06:15 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ bool	ft_createstack(t_stack *stack, char **str)
 		num = ft_atol(str[i]);
 		if (num < INT_MIN || num > INT_MAX)
 		{
-			write (1, "Error\n", 6);
+			write (2, "Error\n", 6);
 			return (false);
 		}
 		if (!ft_duplicate(stack, (int)num))
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			return (false);
 		}
 		node = ft_newlst((int)num);
@@ -59,8 +59,10 @@ int	main(int argc, char **argv)
 	static t_stack	stack_a;
 	static t_stack	stack_b;
 
-	if (ft_checkwspaces(argv) == false)
-		return (write (1, "Error\n", 6));
+	if (argc < 2)
+		return (0);
+	else if (!argv[1][0])
+		return(write(2, "Error\n", 6), 1);
 	stack_a = ft_checkargs(argc, argv);
 	if (stack_a.lenght == 0)
 		return (0);
@@ -80,6 +82,8 @@ t_stack	ft_checkargs(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		if (ft_checkwspaces(av) == false)
+			return (write (2, "Error\n", 6), stack);
 		str = ft_split(av[i], ' ');
 		if (!str)
 			all_clear(0, &stack);
