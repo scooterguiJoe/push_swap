@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:34:50 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/07 11:33:32 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:35:00 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sorting_four_five(t_stack *stack_a, t_stack *stack_b)
 		while (stack_b->lenght <= 1)
 		{
 			if (stack_a->head->rank == 1 || stack_a->head->rank == 2)
-				ft_push(stack_a, stack_b, 'a');
+				ft_push(stack_a, stack_b, 'b');
 			else
 				ft_rotate(stack_a, 'a', 1);
 		}
@@ -65,7 +65,8 @@ void	sorting_four_five(t_stack *stack_a, t_stack *stack_b)
 		}
 		if (stack_b->head->rank == 1)
 			ft_swap(stack_b, 'b');
-		ft_push(stack_b, stack_a, 'b');
+		ft_push(stack_b, stack_a, 'a');
+		ft_push(stack_b, stack_a, 'a');
 	}
 }
 

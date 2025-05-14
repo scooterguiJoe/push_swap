@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:18:56 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/30 13:00:15 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/11 14:29:53 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,6 @@ void	ft_clearlst(t_stack *lst)
 	lst->lenght = 0;
 }
 
-void	ft_printstack(t_stack *stack)
-{
-	t_node	*current;
-
-	if (!stack->head)
-		return ;
-	current = stack->head;
-	while (current)
-		current = current->next;
-}
 // #include <stdio.h>
 // #include <unistd.h>
 // int main()

@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:30:15 by guvascon          #+#    #+#             */
-/*   Updated: 2025/05/01 14:02:10 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:43:14 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,7 @@ long	ft_atol(char *str)
 	sign = 1;
 	num = 0;
 	if (str[count] == 32 || (str[count] >= 9 && str[count] <= 13))
-	{
 		count++;
-		if(ft_isdigit(str[count + 1]) || str[count + 1] != '+' || str[count + 1] != '-')
-		{ft_printf("error\n");
-			return (0);
-		}
-	}
 	if (str[count] == '+' || str[count] == '-')
 	{
 		if (str[count] == '-')
@@ -93,12 +87,12 @@ bool	ft_isvalid(int ac, char **av)
 	{
 		split = av;
 		j = 0;
-		if (!split)
+		if (!av)
 		{
-			write(2, "Error\n", 6);
+			write (2, "Error\n", 6);
 			return (false);
 		}
-		while (split[j])
+		while (av[j])
 		{
 			if (!ft_isnbr(av[j]))
 				return (free_split(split), false);
@@ -113,8 +107,9 @@ bool	ft_checkwspaces(char **av)
 {
 	int	i;
 	int	j;
-	int check = 0;
-	
+	int	check;
+
+	check = 0;
 	j = 1;
 	while (av[j])
 	{
@@ -130,7 +125,7 @@ bool	ft_checkwspaces(char **av)
 		j++;
 	}
 	if (check == 0)
-		return(false);
+		return (false);
 	return (true);
 }
 // #include <unistd.h>

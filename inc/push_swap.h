@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:01:08 by guvascon          #+#    #+#             */
-/*   Updated: 2025/04/22 12:24:51 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/05/11 14:27:04 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ bool		ft_checkwspaces(char **av);
 t_node		*ft_newlst(int content);
 void		ft_lstaddfront(t_stack *lst, t_node *new);
 void		ft_lstaddback(t_stack *lst, t_node *new);
-void		ft_printstack(t_stack *stack);
 void		ft_clearlst(t_stack *lst);
 
 //push_swap.c
@@ -62,11 +61,6 @@ void		ft_swap(t_stack *src, char flag);
 void		ft_push(t_stack *src, t_stack *dest, char flag);
 void		ft_rotate(t_stack *src, char flag, int both);
 void		ft_rrotate(t_stack *src, char flag);
-
-//move_move.c
-void		ft_ss(t_stack *stack_a, t_stack *stack_b);
-void		ft_rr(t_stack *stack_a, t_stack *stack_b);
-void		ft_rrr(t_stack *stack_a, t_stack *stack_b);
 
 //push_utils.c
 void		free_split(char **av);

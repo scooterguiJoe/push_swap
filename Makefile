@@ -6,13 +6,12 @@
 #    By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 14:58:52 by guvascon          #+#    #+#              #
-#    Updated: 2025/04/04 17:16:24 by guvascon         ###   ########.fr        #
+#    Updated: 2025/05/01 14:47:31 by guvascon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = srcs/push_swap.c srcs/aux.c srcs/print_stack.c srcs/move_push.c \
-		srcs/push_utils.c srcs/move_move.c srcs/radix_sort.c \
-		srcs/short_sort.c
+		srcs/push_utils.c  srcs/radix_sort.c srcs/short_sort.c
 		
 OBJS = $(SRCS:.c=.o)
 
